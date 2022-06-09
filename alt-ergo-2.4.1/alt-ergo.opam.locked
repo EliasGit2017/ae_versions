@@ -1,0 +1,64 @@
+opam-version: "2.0"
+name: "alt-ergo"
+version: "2.4.1"
+synopsis: "The Alt-Ergo SMT prover"
+description: """\
+Alt-Ergo is an automatic theorem prover of mathematical formulas. It was developed at LRI, and is now maintained at OCamlPro.
+
+See more details on https://alt-ergo.ocamlpro.com/"""
+maintainer: "Alt-Ergo developers"
+authors: "Alt-Ergo developers"
+license: [
+  "OCamlPro Non-Commercial Purpose License, version 1" "LGPL-2.1-only"
+]
+homepage: "https://alt-ergo.ocamlpro.com/"
+doc: "https://ocamlpro.github.io/alt-ergo"
+bug-reports: "https://github.com/OCamlPro/alt-ergo/issues"
+depends: [
+  "alt-ergo-lib" {= "2.4.1"}
+  "alt-ergo-parsers" {= "2.4.1"}
+  "astring" {= "0.8.5" & with-doc}
+  "base-bigarray" {= "base"}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "camlzip" {= "1.11"}
+  "cmdliner" {= "1.0.4"}
+  "conf-autoconf" {= "0.1"}
+  "conf-gmp" {= "4"}
+  "conf-pkg-config" {= "2"}
+  "conf-which" {= "1"}
+  "conf-zlib" {= "1"}
+  "cppo" {= "1.6.9" & with-doc}
+  "csexp" {= "1.5.1"}
+  "dune" {= "2.9.3"}
+  "dune-configurator" {= "2.9.3"}
+  "fmt" {= "0.9.0" & with-doc}
+  "fpath" {= "0.7.3" & with-doc}
+  "menhir" {= "20200123"}
+  "menhirLib" {= "20200123"}
+  "menhirSdk" {= "20200123"}
+  "num" {= "1.4"}
+  "ocaml" {= "4.10.0"}
+  "ocaml-base-compiler" {= "4.10.0"}
+  "ocaml-config" {= "1"}
+  "ocamlbuild" {= "0.14.1" & with-doc}
+  "ocamlfind" {= "1.9.3"}
+  "ocplib-simplex" {= "0.4"}
+  "odoc" {= "2.1.0" & with-doc}
+  "odoc-parser" {= "1.0.0" & with-doc}
+  "psmt2-frontend" {= "0.3.0"}
+  "re" {= "1.10.4" & with-doc}
+  "result" {= "1.5"}
+  "seq" {= "base"}
+  "stdlib-shims" {= "0.3.0"}
+  "topkg" {= "1.0.5" & with-doc}
+  "tyxml" {= "4.5.0" & with-doc}
+  "uutf" {= "1.0.3" & with-doc}
+  "zarith" {= "1.12"}
+]
+build: [
+  ["ocaml" "unix.cma" "configure.ml" name "--libdir" lib "--mandir" man]
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+dev-repo: "git+https://github.com/OCamlPro/alt-ergo.git"
