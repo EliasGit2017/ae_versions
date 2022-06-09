@@ -1,0 +1,46 @@
+opam-version: "2.0"
+name: "alt-ergo-lib"
+version: "2.3.3"
+synopsis: "The Alt-Ergo SMT prover library"
+description: """\
+This is the core library used in the Alt-Ergo SMT solver.
+
+Alt-Ergo is an automatic theorem prover of mathematical formulas. It was developed at LRI, and is now maintained at OCamlPro.
+
+See more details on http://alt-ergo.ocamlpro.com/"""
+maintainer: "OCamlPro <alt-ergo@ocamlpro.com>"
+authors: "Alt-Ergo developers"
+license: "OCamlPro Non-Commercial Purpose License, version 1"
+homepage: "http://alt-ergo.ocamlpro.com/"
+bug-reports: "https://github.com/OCamlPro/alt-ergo/issues"
+depends: [
+  "base-bigarray" {= "base"}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "conf-autoconf" {= "0.1"}
+  "conf-gmp" {= "4"}
+  "conf-which" {= "1"}
+  "dune" {= "2.9.0"}
+  "num" {= "1.4"}
+  "ocaml" {= "4.06.1"}
+  "ocaml-base-compiler" {= "4.06.1"}
+  "ocaml-config" {= "1"}
+  "ocaml-secondary-compiler" {= "4.08.1-1"}
+  "ocamlfind" {= "1.9.1"}
+  "ocamlfind-secondary" {= "1.9.1"}
+  "ocplib-simplex" {= "0.4"}
+  "seq" {= "0.2.2"}
+  "stdlib-shims" {= "0.3.0"}
+  "zarith" {= "1.12"}
+  "camlzip" {= "1.07"}
+  "menhir" {= "20200123"}
+  "psmt2-frontend" {= "0.2"}
+  "cmdliner" {= "1.0.4"}
+]
+conflicts: ["alt-ergo-free" "alt-ergo-lib-free"]
+build: [
+  ["./configure" name]
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+dev-repo: "git+https://github.com/OCamlPro/alt-ergo.git"

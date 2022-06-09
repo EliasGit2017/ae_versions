@@ -1,0 +1,50 @@
+opam-version: "2.0"
+name: "alt-ergo"
+version: "2.2.0"
+maintainer: "alt-ergo@ocamlpro.com"
+authors: "Alt-Ergo developers"
+license: "OCamlPro Non-Commercial License + Apache"
+homepage: "http://alt-ergo.ocamlpro.com/"
+bug-reports: "https://github.com/OCamlPro/alt-ergo/issues"
+depends: [
+  "base-bigarray" {= "base"}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "camlzip" {= "1.06"}
+  "conf-autoconf" {= "0.1"}
+  "conf-gmp" {= "4"}
+  "conf-gtk2" {= "1"}
+  "conf-pkg-config" {= "2"}
+  "conf-which" {= "1"}
+  "lablgtk" {= "2.18.12"}
+  "menhir" {= "20171206"}
+  "num" {= "1.4"}
+  "ocaml" {= "4.06.1"}
+  "ocaml-base-compiler" {= "4.06.1"}
+  "ocaml-config" {= "1"}
+  "ocamlbuild" {= "0.14.1"}
+  "ocamlfind" {= "1.9.1"}
+  "ocplib-simplex" {= "0.4"}
+  "psmt2-frontend" {= "0.1"}
+  "zarith" {= "1.12"}
+]
+conflicts: [
+  "alt-ergo" {< "2.0.0"}
+  "altgr-ergo" {< "2.0.0"}
+  "satML-plugin" {< "2.0.0"}
+  "profiler-plugin" {< "2.0.0"}
+  "fm-simplex-plugin" {< "2.0.0"}
+  "conf-gtksourceview"
+]
+build: [
+  ["autoconf"]
+  ["./configure" "-prefix" "%{prefix}%"]
+  [make]
+]
+install: [make "install" "MANDIR=%{man}%"]
+remove: [
+  ["autoconf"]
+  ["./configure" "-prefix" "%{prefix}%"]
+  [make "uninstall" "MANDIR=%{man}%"]
+]
+dev-repo: "git+https://github.com/OCamlPro/alt-ergo.git"

@@ -1,0 +1,128 @@
+# dune external-lib-deps --missing @@default
+# OCAMLPARAM: unset
+# Workspace root: /home/elias/Desktop/ae_versions/alt-ergo-2.0.0/sources
+$ /usr/bin/nproc > /tmp/dune4f8834.output 2> /dev/null
+# Auto-detected concurrency: 12
+# disable binary cache
+$ /home/elias/.opam/ae_base/bin/ocamlc.opt -config > /tmp/dune91f44d.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/elias/.opam/ae_base/lib/toplevel"
+#  ; ocaml_bin = External "/home/elias/.opam/ae_base/bin"
+#  ; ocaml = Ok External "/home/elias/.opam/ae_base/bin/ocaml"
+#  ; ocamlc = External "/home/elias/.opam/ae_base/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/elias/.opam/ae_base/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/elias/.opam/ae_base/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/elias/.opam/ae_base/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/elias/.opam/ae_base/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/elias/.opam/ae_base/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/home/elias/Desktop/ae_versions/alt-ergo-2.0.0/sources"
+#        ; "INSIDE_DUNE" :
+#            "/home/elias/Desktop/ae_versions/alt-ergo-2.0.0/sources/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/elias/Desktop/ae_versions/alt-ergo-2.0.0/sources/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/elias/Desktop/ae_versions/alt-ergo-2.0.0/sources/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/elias/Desktop/ae_versions/alt-ergo-2.0.0/sources/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/elias/.opam/ae_base/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.05.0"
+#      ; standard_library_default = "/home/elias/.opam/ae_base/lib/ocaml"
+#      ; standard_library = "/home/elias/.opam/ae_base/lib/ocaml"
+#      ; standard_runtime = "/home/elias/.opam/ae_base/bin/ocamlrun"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags =
+#          [ "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fcommon"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ; "-fPIC"
+#          ]
+#      ; ocamlc_cppflags = []
+#      ; ocamlopt_cflags =
+#          [ "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fcommon"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; ocamlopt_cppflags = []
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fcommon"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ; "-fPIC"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lcurses"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fcommon"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = [ "-pg" ]
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-unknown-linux-gnu"
+#      ; target = "x86_64-unknown-linux-gnu"
+#      ; profiling = true
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = false
+#      ; exec_magic_number = "Caml1999X011"
+#      ; cmi_magic_number = "Caml1999I021"
+#      ; cmo_magic_number = "Caml1999O011"
+#      ; cma_magic_number = "Caml1999A012"
+#      ; cmx_magic_number = "Caml1999Y015"
+#      ; cmxa_magic_number = "Caml1999Z014"
+#      ; ast_impl_magic_number = "Caml1999M020"
+#      ; ast_intf_magic_number = "Caml1999N018"
+#      ; cmxs_magic_number = "Caml2007D002"
+#      ; cmt_magic_number = "Caml2012T009"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }

@@ -1,0 +1,54 @@
+opam-version: "2.0"
+name: "alt-ergo"
+version: "2.0.0"
+maintainer: "alt-ergo@ocamlpro.com"
+authors: "Alt-Ergo developers"
+license: "OCamlPro Non-Commercial License + Apache"
+homepage: "http://alt-ergo.ocamlpro.com/"
+bug-reports: "https://github.com/OCamlPro/alt-ergo/issues"
+depends: [
+  "base-bigarray" {= "base"}
+  "base-num" {= "base"}
+  "base-threads" {= "base"}
+  "base-unix" {= "base"}
+  "camlzip" {= "1.06"}
+  "conf-autoconf" {= "0.1"}
+  "conf-gmp" {= "4"}
+  "conf-gtk2" {= "1"}
+  "conf-pkg-config" {= "2"}
+  "conf-which" {= "1"}
+  "dune" {= "2.9.0"}
+  "lablgtk" {= "2.18.11"}
+  "menhir" {= "20211128"}
+  "menhirLib" {= "20211128"}
+  "menhirSdk" {= "20211128"}
+  "num" {= "0"}
+  "ocaml" {= "4.05.0"}
+  "ocaml-base-compiler" {= "4.05.0"}
+  "ocaml-config" {= "1"}
+  "ocaml-secondary-compiler" {= "4.08.1-1"}
+  "ocamlfind" {= "1.9.1"}
+  "ocamlfind-secondary" {= "1.9.1"}
+  "ocplib-simplex" {= "0.4"}
+  "zarith" {= "1.12"}
+]
+conflicts: [
+  "alt-ergo" {< "2.0.0"}
+  "altgr-ergo" {< "2.0.0"}
+  "satML-plugin" {< "2.0.0"}
+  "profiler-plugin" {< "2.0.0"}
+  "fm-simplex-plugin" {< "2.0.0"}
+  "conf-gtksourceview"
+]
+build: [
+  ["autoconf"]
+  ["./configure" "-prefix" "%{prefix}%"]
+  [make]
+]
+install: [make "install" "MANDIR=%{man}%"]
+remove: [
+  ["autoconf"]
+  ["./configure" "-prefix" "%{prefix}%"]
+  [make "uninstall" "MANDIR=%{man}%"]
+]
+dev-repo: "git+https://github.com/OCamlPro/alt-ergo.git"
